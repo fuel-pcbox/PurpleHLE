@@ -1,0 +1,284 @@
+{
+  "iPhone1,1": 
+  {
+    "name": "iPhone",
+    "cpu": "RISC ARM 11"
+  },
+  
+  "iPhone1,2": 
+  {
+    "name": "iPhone 3G",
+    "cpu": "RISC ARM 11"
+  },
+  
+  
+  "iPhone2,1": 
+  {
+    "name": "iPhone 3GS",
+    "cpu": "ARM Cortex-A8"
+  },
+  
+  "iPhone3,1": 
+  {
+    "name": "iPhone 4",
+    "cpu": "ARMv7 A4"
+  },
+  
+  "iPhone3,2": 
+  {
+    "name": "iPhone 4",
+    "cpu": "ARMv7 A4"
+  },
+  
+  "iPhone3,3": 
+  {
+    "name": "iPhone 4 (GSM+CDMA)",
+    "cpu": "ARMv7 A4"
+  },
+  
+  "iPhone4,1": 
+  {
+    "name": "iPhone 4s",
+    "cpu": "ARMv7 A5"
+  },
+  
+  "iPhone5,1": 
+  {
+    "name": "iPhone 5",
+    "cpu": "ARMv7s A6"
+  },
+  
+  "iPhone5,2": 
+  {
+    "name": "iPhone 5 (GSM+CDMA)",
+    "cpu": "ARMv7s A6"
+  },
+  
+  "iPhone5,3": 
+  {
+    "name": "iPhone 5c",
+    "cpu": "ARMv7s A6"
+  },
+  
+  "iPhone5,4": 
+  {
+    "name": "iPhone 5c",
+    "cpu": "ARMv7s A6"
+  },
+  
+  "iPhone6,1": 
+  {
+    "name": "iPhone 5s",
+    "cpu": "ARMv8-A A7"
+  },
+  
+  "iPhone6,2": 
+  {
+    "name": "iPhone 5s",
+    "cpu": "ARMv8-A A7"
+  },
+  
+  "iPhone7,1": 
+  {
+    "name": "iPhone 6 Plus",
+    "cpu": "ARMv8-A A8"
+  },
+  
+  "iPhone7,2": 
+  {
+    "name": "iPhone 6",
+    "cpu": "ARMv8-A A8"
+  },
+  
+  "iPod1,1": 
+  {
+    "name": "iPod Touch 1st Gen",
+    "cpu": "ARM11"
+  },
+  
+  "iPod2,1": 
+  {
+    "name": "iPod Touch 2nd Gen",
+    "cpu": "ARM11"
+  },
+  
+  "iPod3,1": 
+  {
+    "name": "iPod Touch 3rd Gen",
+    "cpu": "ARMv7-A"
+  },
+  
+  "iPod4,1": 
+  {
+    "name": "iPod Touch 4th Gen",
+    "cpu": "ARMv7-A A4"
+  },
+  
+  "iPod5,1": 
+  {
+    "name": "iPod Touch 5th Gen",
+    "cpu": "ARMv7-A A5"
+  },
+  
+  "iPad1,1": 
+  {
+    "name": "iPad",
+    "cpu": "ARMv7 A4"
+  },
+  
+  "iPad2,1": 
+  {
+    "name": "iPad 2 (WiFi)",
+    "cpu": "ARMv7 A5"
+  },
+  
+  "iPad2,2": 
+  {
+    "name": "iPad 2 (Cellular-GSM)",
+    "cpu": "ARMv7 A5"
+  },
+  
+  "iPad2,3": 
+  {
+    "name": "iPad 2 (Cellular-CDMA)",
+    "cpu": "ARMv7 A5"
+  },
+  
+  "iPad2,4": 
+  {
+    "name": "iPad 2 (WiFi)",
+    "cpu": "ARMv7 A5 Rev A"
+  },
+  
+  "iPad2,5": 
+  {
+    "name": "iPad mini (WiFi)",
+    "cpu": "ARMv7-A A5"
+  },
+  
+  "iPad2,6": 
+  {
+    "name": "iPad mini (Cellular)",
+    "cpu": "ARMv7-A A5"
+  },
+  
+  "iPad2,7": 
+  {
+    "name": "iPad mini (Cellular)",
+    "cpu": "ARMv7-A A5"
+  },
+  
+  "iPad3,1": 
+  {
+    "name": "iPad 3 (WiFi)",
+    "cpu": "ARMv7 A5X"
+  },
+  
+  "iPad3,2": 
+  {
+    "name": "iPad 3 (Cellular)",
+    "cpu": "ARMv7 A5X"
+  },
+  
+  "iPad3,3": 
+  {
+    "name": "iPad 3 (Cellular)",
+    "cpu": "ARMv7 A5X"
+  },
+  
+  "iPad3,4": 
+  {
+    "name": "iPad 4 (WiFi)",
+    "cpu": "ARMv7 A6X"
+  },
+  
+  "iPad3,5": 
+  {
+    "name": "iPad 4 (Cellular)",
+    "cpu": "ARMv7 A6X"
+  },
+  
+  "iPad3,6": 
+  {
+    "name": "iPad 4 (Cellular)",
+    "cpu": "ARMv7 A6X"
+  },
+  
+  "iPad4,1": 
+  {
+    "name": "iPad Air (WiFi)",
+    "cpu": "ARMv8 A7 Rev A"
+  },
+  
+  "iPad4,2": 
+  {
+    "name": "iPad Air (Cellular)",
+    "cpu": "ARMv8 A7 Rev A"
+  },
+  
+  "iPad4,3": 
+  {
+    "name": "iPad Air (Cellular)",
+    "cpu": "ARMv8 A7 Rev A"
+  },
+  
+  "iPad4,4": 
+  {
+    "name": "iPad mini 2 (WiFi)",
+    "cpu": "ARMv8-A A7"
+  },
+  
+  "iPad4,5": 
+  {
+    "name": "iPad mini 2 (Cellular)",
+    "cpu": "ARMv8-A A7"
+  },
+  
+  "iPad4,6": 
+  {
+    "name": "iPad mini 2 (Cellular)",
+    "cpu": "ARMv8-A A7"
+  },
+  
+  "iPad4,7": 
+  {
+    "name": "iPad mini 3 (WiFi)",
+    "cpu": "ARMv8-A A7"
+  },
+  
+  "iPad4,8": 
+  {
+    "name": "iPad mini 3 (Cellular)",
+    "cpu": "ARMv8-A A7"
+  },
+  
+  "iPad4,9": 
+  {
+    "name": "iPad mini 3 (Cellular)",
+    "cpu": "ARMv8-A A7"
+  },
+  
+  "iPad5,3": 
+  {
+    "name": "iPad Air 2 (WiFi)",
+    "cpu": "ARMv8 A8X"
+  },
+  
+  "iPad5,4": 
+  {
+    "name": "iPad Air 2 (Cellular)",
+    "cpu": "ARMv8 A8X"
+  },
+  
+  "i386": 
+  {
+    "name": "Simulator",
+    "cpu": "Simulator"
+  },
+  
+  "x86_64": 
+  {
+    "name": "Simulator",
+    "cpu": "Simulator"
+  }
+}
