@@ -22,3 +22,4 @@ set(SOURCES
 )
 
 add_executable(Starlet ${SOURCES})
+target_link_libraries(Starlet stdc++fs z minizip)
