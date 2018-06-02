@@ -1,0 +1,22 @@
+language: cpp
+sudo: required
+dist: trusty
+compiler:
+- gcc
+os:
+- linux
+
+before_script:
+  - sudo apt-get update
+  - sudo apt-get install zlib1g zlib1g-dev libminizip-dev minizip libminizip1
+  - wget -O cmake_installer.sh https://cmake.org/files/v3.11/cmake-3.11.3-Linux-x86_64.sh
+  - chmod +x cmake_installer.sh
+  - mkdir ~/cmake
+  - sudo ./cmake_installer.sh --skip-license --prefix=~/cmake
+  - export PATH=$PATH:~/cmake
+  - cmake --version
+  - mkdir build
+  - cd build
+  - cmake ..
+
+script: make
