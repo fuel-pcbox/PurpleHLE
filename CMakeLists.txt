@@ -16,13 +16,18 @@ get_filename_component( MODULES_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/modules" A
 get_filename_component( STARLET_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/starlet" ABSOLUTE )
 
 
-
 set(SOURCES
 	"${CORE_PATH}/main.cpp"
 	"${MODULES_PATH}/zip/elzip.cpp"
 	"${MODULES_PATH}/zip/unzipper.cpp"
+	"${MODULES_PATH}/plist/Plist.cpp"
+	"${MODULES_PATH}/plist/pugixml.cpp"
+	"${MODULES_PATH}/plist/PlistDate.cpp"
 )
 
 add_executable(Starlet ${SOURCES})
-target_include_directories(Starlet PRIVATE ${MODULES_PATH}/zip/headers)
+target_include_directories(Starlet PRIVATE 
+	${MODULES_PATH}/zip/headers
+	${MODULES_PATH}/plist/include
+)
 target_link_libraries(Starlet stdc++fs minizip)
