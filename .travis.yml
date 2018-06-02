@@ -13,6 +13,8 @@ before_script:
   - cmake --version
   - mkdir build
   - cd build
+  - export CC=gcc-7
+  - export CXX=g++-7
   - cmake ..
 
 script: make
