@@ -15,6 +15,8 @@ get_filename_component( CORE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/core" ABSOLUT
 get_filename_component( MODULES_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/modules" ABSOLUTE )
 get_filename_component( STARLET_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/starlet" ABSOLUTE )
 
+
+
 set(SOURCES
 	"${CORE_PATH}/main.cpp"
 	"${MODULES_PATH}/zip/elzip.cpp"
@@ -22,4 +24,5 @@ set(SOURCES
 )
 
 add_executable(Starlet ${SOURCES})
-target_link_libraries(Starlet stdc++fs z minizip)
+target_include_directories(Starlet PRIVATE ${MODULES_PATH}/zip/headers)
+target_link_libraries(Starlet stdc++fs minizip)
