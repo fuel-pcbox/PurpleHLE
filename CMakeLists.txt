@@ -17,8 +17,8 @@ get_filename_component( STARLET_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/starlet" A
 
 set(SOURCES
 	"${CORE_PATH}/main.cpp"
-	"${MODULES_PATH}/11Zip/elzip.cpp"
-	"${MODULES_PATH}/11Zip/unzipper.cpp"
+	"${MODULES_PATH}/zip/elzip.cpp"
+	"${MODULES_PATH}/zip/unzipper.cpp"
 )
 
 add_executable(Starlet ${SOURCES})
