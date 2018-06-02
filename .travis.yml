@@ -7,8 +7,9 @@ os:
 - linux
 
 before_script:
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update
-  - sudo apt-get install zlib1g zlib1g-dev libminizip-dev minizip libminizip1
+  - sudo apt-get install -y zlib1g zlib1g-dev libminizip-dev minizip libminizip1 gcc-7
   - cmake --version
   - mkdir build
   - cd build
