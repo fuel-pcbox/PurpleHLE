@@ -5,6 +5,7 @@
 
 /* what a nice main file amirite */
 using namespace std;
+namespace fs = std::filesystem;
 
 int main(int argc, char *argv[])
 {
@@ -23,7 +24,7 @@ int main(int argc, char *argv[])
 			cout << "Unable to locate IPSW: " << argv[1] << endl;
 			exit(0);
 		}
-		if(fs::is_directory(fs::status(argv[2]))
+		if(fs::is_directory(fs::status(argv[2])))
 		{
 			cout << argv[2] << " is a directory. Cowardly refusing to delete [even if its empty.]" << endl;
 			cout << "Please manually delete or specify a different directory name." << endl;
