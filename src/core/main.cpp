@@ -12,11 +12,23 @@ int main(int argc, char *argv[])
 	cout << "Built on: " << __DATE__ " at: " << __TIME__ << endl;
 	if(argc == 2)
 	{
-		cout << "hello world" << endl; //fixme
+		cout << "Attempting bootstrap from: " << argv[1] << endl; //fixme
 	}
 	else if(argc == 3)
 	{
 		cout << "Extracting " << argv[1] << " to " << argv[2] << endl;
+		ifstream ipswExists(argv[1]);
+		if(!ipswExists)
+		{
+			cout << "Unable to locate IPSW: " << argv[1] << endl;
+			exit(0);
+		}
+		if(fs::is_directory(fs::status(argv[2]))
+		{
+			cout << argv[2] << " is a directory. Cowardly refusing to delete [even if its empty.]" << endl;
+			cout << "Please manually delete or specify a different directory name." << endl;
+			exit(0);
+		}
 		elz::extractZip(argv[1], argv[2]);
 		/* this is ugly :X */
 		char plistLocation[1024];
