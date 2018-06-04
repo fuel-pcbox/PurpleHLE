@@ -18,3 +18,12 @@ before_script:
   - cmake ..
 
 script: make
+
+after_success:
+  - wget https://raw.githubusercontent.com/not0xFF/PurpleHLE/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh success https://discordapp.com/api/webhooks/453288315685437440/-y-mE0WiHlDP_T9VZXgayh7qGECUlXC4q2s_wfiCyXENyGwI3_BqUSjBPdUbMYrNgm-6
+after_failure:
+  - wget https://raw.githubusercontent.com/not0xFF/PurpleHLE/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh failure https://discordapp.com/api/webhooks/453288315685437440/-y-mE0WiHlDP_T9VZXgayh7qGECUlXC4q2s_wfiCyXENyGwI3_BqUSjBPdUbMYrNgm-6
