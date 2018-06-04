@@ -1,0 +1,208 @@
+
+// Mach Syscalls (partial list)
+
+#define MACH_ABSOLUTE_TIME -3
+
+#define MACH_REPLY_PORT -26
+#define THREAD_SELF_TRAP -27
+#define TASK_SELF_TRAP -28
+#define HOST_SELF_TRAP -29
+
+#define MACH_MSG_TRAP -31
+#define MACH_MSG_OVERWRITE_TRAP -32
+
+#define SEMAPHORE_SIGNAL_TRAP -33
+#define SEMAPHORE_SIGNAL_ALL_TRAP -34
+#define SEMAPHORE_SIGNAL_THREAD_TRAP -35
+#define SEMAPHORE_WAIT_TRAP -36
+#define SEMAPHORE_WAIT_SIGNAL_TRAP -37
+#define SEMAPHORE_TIMEDWAIT_TRAP -38
+#define SEMAPHORE_TIMEDWAIT_SIGNAL_TRAP -39
+
+#define SWTCH_PRI -59
+#define SYSCALL_THREAD_SWITCH -61
+
+#define MACH_TIMEBASE_INFO_TRAP -89
+#define MACH_WAIT_UNTIL_TRAP -90
+
+#define MK_TIMER_CREATE_TRAP -91
+#define MK_TIMER_DESTROY_TRAP -92
+#define MK_TIMER_ARM_TRAP -93
+#define MK_TIMER_CANCEL_TRAP -94
+#define MK_TIMEBASE_INFO_TRAP -95
+
+// Bsd Syscalls (partial list)
+
+#undef DELETE
+
+#define EXIT 1
+#define FORK 2
+#define READ 3
+#define WRITE 4
+#define OPEN 5
+#define CLOSE 6
+#define WAIT4 7
+#define LINK 9
+#define UNLINK 10
+#define CHDIR 12
+#define FCHDIR 13
+#define MKNOD 14
+#define CHMOD 15
+#define CHOWN 16
+#define GETFSSTAT 18
+#define GETPID 20
+#define SETUID 23
+#define GETUID 24
+#define GETEUID 25
+#define PTRACE 26
+#define RECVMSG 27
+#define SENDMSG 28
+#define RECVFROM 29
+#define ACCEPT 30
+#define GETPEERNAME 31
+#define GETSOCKNAME 32
+#define ACCESS 33
+#define CHFLAGS 34
+#define FCHFLAGS 35
+#define SYNC 36
+#define KILL 37
+#define GETPPID 39
+#define DUP 41
+#define PIPE 42
+#define GETEGID 43
+#define PROFIL 44
+#define SIGACTION 46
+#define GETGID 47
+#define SIGPROCMASK 48
+#define GETLOGIN 49
+#define SETLOGIN 50
+#define ACCT 51
+#define SIGPENDING 52
+#define SIGNALSTACK 53
+#define IOCTL 54
+#define REBOOT 55
+#define REVOKE 56
+#define SYMLINK 57
+#define READLINK 58
+#define EXECVE 59
+#define UMASK 60
+#define CHROOT 61
+#define MSYNC 65
+#define VFORK 66
+#define MUNMAP 73
+#define MPROTECT 74
+#define MADVICE 75
+#define MINCORE 78
+#define GETGROUPS 79
+#define GETDTABLESIZE 89
+#define DUP2 90
+#define FCNTL 92
+#define SELECT 93
+#define FSYNC 95
+
+#define SETPRIORITY 96
+#define SOCKET 97
+#define CONNECT 98
+#define GETPRIORITY 100
+#define BIND 104
+#define SETSOCKOPT 105
+#define LISTEN 106
+
+#define SIGSUSPEND 111
+#define GETTIMEOFDAY 116
+#define GETSOCKOPT 118
+
+#define READV 120
+#define WRITEV 121
+#define FCHOWN 123
+#define FCHMOD 124
+
+#define RENAME 128
+#define MKFIFO 132
+#define SENDTO 133
+#define SHUTDOWN 134
+#define SOCKETPAIR 135
+#define MKDIR 136
+#define RMDIR 137
+
+#define SETSID 147
+#define GETPGID 151
+#define SETPRIVEXEC 152
+#define PREAD 153
+#define PWRITE 154
+#define STATFS 157
+#define FSTATFS 158
+
+#define UNMOUNT 159
+#define MOUNT 167
+
+#define STAT 188
+#define FSTAT 189
+#define LSTAT 190
+#define PATHCONF 191
+#define FPATHCONF 192
+#define GETDIRENTRIES 196
+#define MMAP 197
+#define LSEEK 199
+#define TRUNCATE 200
+#define FTRUNCATE 201
+
+#define SYSCTL 202
+
+#define GETATTRLIST 220
+#define SETATTRLIST 221
+#define GETDIRENTRIESATTR 222
+#define DELETE 226
+#define COPYFILE 227
+#define FGETATTRLIST 228
+#define FSETATTRLIST 229
+
+#define SHM_OPEN 266
+#define SHM_UNLINK 267
+
+#define SHARED_REGION_CHECK_NP 294
+#define SHARED_REGION_MAP_NP 295
+#define SHARED_REGION_MAP_NP_v2 299
+
+#define ISSETUGID 327
+#define __DISABLE_THREADSIGNAL 331
+#define __PTHREAD_CANCELED 333
+#define __SEMWAIT_SIGNAL 334
+#define STAT64 338
+#define FSTAT64 339
+#define LSTAT64 340
+#define GETDIRENTRIES64 344
+#define STATFS64 345
+#define FSTATFS64 346
+#define KQUEUE 362
+#define KEVENT 363
+
+#define __SEMWAIT_SIGNAL_v2 370
+
+#define READ_NOCANCEL 396
+#define WRITE_NOCANCEL 397
+#define OPEN_NOCANCEL 398
+#define CLOSE_NOCANCEL 399
+#define WAIT4_NOCANCEL 400
+#define RECVMSG_NOCANCEL 401
+#define SENDMSG_NOCANCEL 402
+#define RECVFROM_NOCANCEL 403
+#define ACCEPT_NOCANCEL 404
+#define MSYNC_NOCANCEL 405
+#define FCNTL_NOCANCEL 406
+#define SELECT_NOCANCEL 407
+#define FSYNC_NOCANCEL 408
+#define CONNECT_NOCANCEL 409
+#define SIGSUSPEND_NOCANCEL 410
+#define READV_NOCANCEL 411
+#define WRITEV_NOCANCEL 412
+#define SENDTO_NOCANCEL 413
+#define PREAD_NOCANCEL 414
+#define PWRITE_NOCANCEL 415
+#define WAITID_NOCANCEL 416
+#define POLL_NOCANCEL 417
+
+// Sys syscalls (partial list)
+
+#define SYS_ICACHE_INVALIDATE 0
+#define __PTHREAD_SET_SELF 2
