@@ -14,7 +14,9 @@ endif()
 get_filename_component( CORE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/core" ABSOLUTE )
 get_filename_component( MODULES_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/modules" ABSOLUTE )
 get_filename_component( STARLET_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/starlet" ABSOLUTE )
-
+get_filename_component( STARLET_ARMV6_PATH "${STARLET_PATH}/armv6" ABSOLUTE )
+get_filename_component( TINYXML_PATH "${MODULES_PATH}/TinyXML" ABSOLUTE )
+get_filename_component( WXINCLUDE_PATH "${MODULES_PATH}/wxWidgets" ABSOLUTE )
 
 set(SOURCES
 	"${CORE_PATH}/main.cpp"
@@ -25,9 +27,20 @@ set(SOURCES
 	"${MODULES_PATH}/plist/PlistDate.cpp"
 )
 
-add_executable(Starlet ${SOURCES})
-target_include_directories(Starlet PRIVATE 
+set(TINYXMLSRC
+	"${TINYXML_PATH}/tinystr.cpp"
+	"${TINYXML_PATH}/tinyxml.cpp"
+	"${TINYXML_PATH}/tinyxmlerror.cpp"
+	"${TINYXML_PATH}/tinyxmlparser.cpp"
+)
+
+ADD_LIBRARY( MyStaticLib STATIC ${TINYXMLSRC})
+
+add_executable(PurpleHLE ${SOURCES})
+target_include_directories(PurpleHLE PRIVATE 
 	${MODULES_PATH}/zip/headers
 	${MODULES_PATH}/plist/include
+	${STARLET_ARMV6_PATH}/headers
+	${WXINCLUDE_PATH}/include
 )
-target_link_libraries(Starlet stdc++fs minizip)
+target_link_libraries(PurpleHLE stdc++fs minizip TINYXMLSRC)
