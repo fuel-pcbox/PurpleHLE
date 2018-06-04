@@ -21,7 +21,6 @@ case $1 in
   * )
     EMBED_COLOR=0
     STATUS_MESSAGE="Status Unknown"
-    AVATAR="https://travis-ci.org/images/logos/TravisCI-Mascot-1.png"
     ;;
 esac
 
@@ -45,7 +44,7 @@ fi
 TIMESTAMP=$(date --utc +%FT%TZ)
 WEBHOOK_DATA='{
   "username": "",
-  "avatar_url": "https://travis-ci.org/images/logos/TravisCI-Mascot-1.png",
+  "avatar_url": "https://cdn.discordapp.com/avatars/453288315685437440/6f7e2f20ff785742a7af73cbe3194e40.png",
   "embeds": [ {
     "color": '$EMBED_COLOR',
     "author": {
