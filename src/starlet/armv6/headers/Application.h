@@ -13,8 +13,8 @@ class App
 public:
 	void Init();
 
-	void InitTask(std::string file);
-	void NextTask(IpcName* bootPort);
+	void App::InitTask(std::string file);
+	void App::NextTask(IpcName* bootPort);
 
 	MachO::Reader* m_machO;	
 
