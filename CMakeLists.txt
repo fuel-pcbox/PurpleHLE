@@ -34,13 +34,76 @@ set(TINYXMLSRC
 	"${TINYXML_PATH}/tinyxmlparser.cpp"
 )
 
-ADD_LIBRARY( tinylib STATIC ${TINYXMLSRC})
+set(ARMV6SRC
+	"${STARLET_ARMV6_PATH}/Misc/Application.cpp"
+	"${STARLET_ARMV6_PATH}/Misc/Class.cpp"
+	"${STARLET_ARMV6_PATH}/Misc/File.cpp"
+	"${STARLET_ARMV6_PATH}/Misc/FuncExec.cpp"
+	"${STARLET_ARMV6_PATH}/Misc/MemBlock.cpp"
+	"${STARLET_ARMV6_PATH}/Misc/MiscFunc.cpp"
+	"${STARLET_ARMV6_PATH}/Misc/NibReader.cpp"
+	"${STARLET_ARMV6_PATH}/Misc/Objc.cpp"
+	"${STARLET_ARMV6_PATH}/Misc/Object.cpp"
+	"${STARLET_ARMV6_PATH}/Misc/PlistBReader.cpp"
+	"${STARLET_ARMV6_PATH}/Misc/Port.cpp"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Decode.inl"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Bits.inl"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Branch.inl"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Data.inl"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Flags.inl"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Mem.inl"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Misc.inl"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Multiple.inl"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Multiply.inl"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Packed.inl"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Shift.inl"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Vfp.inl"
+	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_VfpMem.inl"
+	"${STARLET_ARMV6_PATH}/Kernel/BsdKernel/MemMap.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/BsdKernel/Pthread.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/BsdKernel/SysCtl.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/Devices/Devices.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/FileSystem/BsdFile.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/FileSystem/BsdRegFile.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/FileSystem/BsdSeekable.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/HLE/Bootstrap.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/HLE/MachOHLE.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IOKit/FrameBufferPort.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IOKit/IoOpenPort.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IOKit/IoPortMap.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IOKit/IoServicePort.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IOKit/Mbx2D.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IOKit/MbxPort.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IOKit/Plist.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IOKit/Surface.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IPC/IpcMessage.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IPC/IpcName.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IPC/IpcPort.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IPC/IpcRight.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/IPC/MsgRight.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/MachKernel/Task.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/MachKernel/Thread.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/MachKernel/Timer.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/MachKernel/Waitable.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/Mach-O/DebugSymbols.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/Mach-O/MachoReader.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/Ports/ClockPort.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/Ports/TaskPort.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/Ports/ThreadPort.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/Sockets/BsdSocket.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/Sockets/DgramSocket.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/Sockets/StreamSocket.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/Swi/Swi.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/Swi/SwiResume.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/VirtualMem/VirtualMem.cpp"
+)
+ADD_LIBRARY( tinyxml STATIC ${TINYXMLSRC})
 
-add_executable(PurpleHLE ${SOURCES})
+add_executable(PurpleHLE ${SOURCES} ${ARMV6SRC})
 target_include_directories(PurpleHLE PRIVATE 
 	${MODULES_PATH}/zip/headers
 	${MODULES_PATH}/plist/include
 	${STARLET_ARMV6_PATH}/headers
 	${WXINCLUDE_PATH}/include
 )
-target_link_libraries(PurpleHLE stdc++fs minizip tinylib)
+target_link_libraries(PurpleHLE stdc++fs minizip tinyxml)
