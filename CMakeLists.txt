@@ -15,6 +15,7 @@ get_filename_component( CORE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/core" ABSOLUT
 get_filename_component( MODULES_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/modules" ABSOLUTE )
 get_filename_component( STARLET_PATH "${CMAKE_CURRENT_SOURCE_DIR}/src/starlet" ABSOLUTE )
 get_filename_component( STARLET_ARMV6_PATH "${STARLET_PATH}/armv6" ABSOLUTE )
+get_filename_component( STARLET_LOL_INLINE_CRAP "${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/" ABSOLUTE )
 get_filename_component( TINYXML_PATH "${MODULES_PATH}/TinyXML" ABSOLUTE )
 get_filename_component( WXINCLUDE_PATH "${MODULES_PATH}/wxWidgets" ABSOLUTE )
 
@@ -46,19 +47,6 @@ set(ARMV6SRC
 	"${STARLET_ARMV6_PATH}/Misc/Object.cpp"
 	"${STARLET_ARMV6_PATH}/Misc/PlistBReader.cpp"
 	"${STARLET_ARMV6_PATH}/Misc/Port.cpp"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Decode.inl"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Bits.inl"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Branch.inl"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Data.inl"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Flags.inl"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Mem.inl"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Misc.inl"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Multiple.inl"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Multiply.inl"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Packed.inl"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Shift.inl"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_Vfp.inl"
-	"${STARLET_ARMV6_PATH}/Terrible Arm Interpreter/Inst_VfpMem.inl"
 	"${STARLET_ARMV6_PATH}/Kernel/BsdKernel/MemMap.cpp"
 	"${STARLET_ARMV6_PATH}/Kernel/BsdKernel/Pthread.cpp"
 	"${STARLET_ARMV6_PATH}/Kernel/BsdKernel/SysCtl.cpp"
@@ -93,8 +81,8 @@ set(ARMV6SRC
 	"${STARLET_ARMV6_PATH}/Kernel/Socket/BsdSocket.cpp"
 	"${STARLET_ARMV6_PATH}/Kernel/Socket/DgramSocket.cpp"
 	"${STARLET_ARMV6_PATH}/Kernel/Socket/StreamSocket.cpp"
-	"${STARLET_ARMV6_PATH}/Kernel/Swi/Swi.cpp"
-	"${STARLET_ARMV6_PATH}/Kernel/Swi/SwiResume.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/SWI/Swi.cpp"
+	"${STARLET_ARMV6_PATH}/Kernel/SWI/SwiResume.cpp"
 	"${STARLET_ARMV6_PATH}/Kernel/VirtualMem/VirtualMem.cpp"
 )
 ADD_LIBRARY( tinyxml STATIC ${TINYXMLSRC})
@@ -103,7 +91,9 @@ add_executable(PurpleHLE ${SOURCES} ${ARMV6SRC})
 target_include_directories(PurpleHLE PRIVATE 
 	${MODULES_PATH}/zip/headers
 	${MODULES_PATH}/plist/include
+	${MODULES_PATH}/glue
 	${STARLET_ARMV6_PATH}/headers
 	${WXINCLUDE_PATH}/include
+	${STARLET_LOL_INLINE_CRAP}
 )
 target_link_libraries(PurpleHLE stdc++fs minizip tinyxml)

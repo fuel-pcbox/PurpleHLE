@@ -1,5 +1,10 @@
-#include "Instruction.h"
+#ifdef _WIN32
 #include "Math.h"
+#else
+#include <cmath>
+#endif
+
+#include "Instruction.h"
 #include <limits.h>
 
 namespace Interpreter

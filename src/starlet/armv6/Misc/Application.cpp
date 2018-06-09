@@ -1,21 +1,26 @@
+#ifdef _WIN32
+#include "Windows.h"
+#include "gl/gl.h"
+#include "gl/glut.h"
+#include "gl/glew.h"
+#include "gl/wglew.h"
+#else
+#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GL/glut.h>
+#endif
+
 #include "Application.h"
 #include "MachoReader.h"
 #include "DebugSymbols.h"
 
 #include "stdio.h"
-#include "Windows.h"
 #include "types.h"
 #include "Memory.h"
 #include "Instruction.h"
 #include <sstream>
 
 using namespace std;
-
-#include "gl/glew.h"
-#include "gl/wglew.h"
-
-#include "gl/gl.h"
-#include "gl/glut.h"
 
 #include "File.h"
 #include "Task.h"
