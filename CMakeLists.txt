@@ -34,7 +34,7 @@ set(TINYXMLSRC
 	"${TINYXML_PATH}/tinyxmlparser.cpp"
 )
 
-ADD_LIBRARY( MyStaticLib STATIC ${TINYXMLSRC})
+ADD_LIBRARY( tinylib STATIC ${TINYXMLSRC})
 
 add_executable(PurpleHLE ${SOURCES})
 target_include_directories(PurpleHLE PRIVATE 
@@ -43,4 +43,4 @@ target_include_directories(PurpleHLE PRIVATE
 	${STARLET_ARMV6_PATH}/headers
 	${WXINCLUDE_PATH}/include
 )
-target_link_libraries(PurpleHLE stdc++fs minizip TINYXMLSRC)
+target_link_libraries(PurpleHLE stdc++fs minizip tinylib)
