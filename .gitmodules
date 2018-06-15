@@ -1,0 +1,3 @@
+[submodule "src/PurpleSapphire"]
+	path = src/PurpleSapphire
+	url = https://github.com/MoochMcGee/PurpleSapphire.git
